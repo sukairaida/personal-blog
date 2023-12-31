@@ -1,0 +1,24 @@
+---
+import Burger from "./Burger.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<header>
+  <nav>
+    <a href="/" class="home-anchor">柏木詩子</a>
+    <Burger />
+    <Navigation />
+  </nav>
+</header>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .home-anchor {
+    font-size: 2rem;
+    color:;
+  }
+</style>

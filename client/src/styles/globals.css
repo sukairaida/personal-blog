@@ -8,3 +8,7 @@ body{
     min-height: 100vh;
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+a{
+    text-decoration: none;
+}

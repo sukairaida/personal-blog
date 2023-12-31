@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="nav-menu">
+  <ul>
+    <li><a href="test">test</a></li>
+    <li><a href="test">test</a></li>
+    <li><a href="test">test</a></li>
+    <li><a href="test">test</a></li>
+  </ul>
+</div>
+
+<style>
+  .nav-menu {
+    position: fixed;
+    z-index: 1045;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100vh;
+    background-color: #fffc;
+    transition: transform 0.5s ease-in-out;
+    backdrop-filter: blur(8px);
+    max-width: 100%;
+    transform: translateX(100%);
+    box-shadow: -6px 0 10px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .show {
+    transform: none;
+  }
+</style>
