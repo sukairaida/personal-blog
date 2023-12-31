@@ -36,19 +36,22 @@ const { title } = Astro.props;
     document.querySelector(".burger-button").addEventListener("click", (e) => {
       e.stopPropagation();
       menu.classList.toggle("show");
-      body.classList.toggle("prevent-scroll");
       if (menu.classList.contains("show")) {
-        body.style.marginRight = `${scrollWidth}px`;
-      } else {
-        body.style.marginRight = "0px";
+        body.classList.add("prevent-scroll");
+        body.style.paddingRight = `${scrollWidth}px`;
+      }
+    });
+
+    menu.addEventListener("transitionend", () => {
+      if (!menu.classList.contains("show")) {
+        body.classList.remove("prevent-scroll");
+        body.style.paddingRight = "0px";
       }
     });
 
     window.addEventListener("click", (e) => {
       if (menu.classList.contains("show") && !menu.contains(e.target as Node)) {
         menu.classList.remove("show");
-        body.classList.remove("prevent-scroll");
-        body.style.marginRight = "0px";
       }
     });
   </script>
