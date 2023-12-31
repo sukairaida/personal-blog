@@ -2,6 +2,38 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Sukairaida no HP">
-  <main>test</main>
+<Layout title="SUKAIRAIDA no HP">
+  <main>
+    <section class="hero">
+      <div class="overlay"></div>
+    </section>
+    <section class="main-content">content</section>
+  </main>
 </Layout>
+
+<style>
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/hero-bg.jpeg");
+    background-position: center;
+    position: relative;
+  }
+
+  .main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+</style>

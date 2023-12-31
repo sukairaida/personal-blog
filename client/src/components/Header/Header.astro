@@ -5,7 +5,7 @@ import Navigation from "./Navigation.astro";
 
 <header>
   <nav>
-    <a href="/" class="home-anchor">柏木詩子</a>
+    <h1><a href="/" class="home-anchor">Sukairaida</a></h1>
     <Burger />
     <Navigation />
   </nav>
@@ -16,9 +16,20 @@ import Navigation from "./Navigation.astro";
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    padding: 0.5rem 0 0.5rem 0;
   }
   .home-anchor {
     font-size: 2rem;
-    color:;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: white;
   }
 </style>
