@@ -4,7 +4,8 @@ config();
 import { mongoose } from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
-import blogPostRouter from "./routers/blogPostRouter.js";
+import blogPostRouter from "./routers/blogPost.js";
+import { MongoError } from "mongodb";
 
 mongoose
   .connect(process.env.MONGODB)

@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const BlogPostSchema = new Schema({
   title: { type: String, required: true },
-  categories: {
+  category: {
     type: [String],
     required: true,
     validate: [
