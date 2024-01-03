@@ -16,6 +16,17 @@ const BlogPostSchema = new Schema({
   markdown: { type: String, required: true },
 });
 
+BlogPostSchema.virtual("UTCDateValues").get(function () {
+  const values = {};
+  const date = new Date(this.date);
+  values.day = date.getUTCDay();
+  values.month = date.getUTCMonth();
+  values.year = date.getUTCFullYear();
+  return values;
+});
+
+BlogPostSchema.set("toJSON", { virtuals: true });
+
 const BlogPostModel = model("blogpost", BlogPostSchema);
 
 export default BlogPostModel;
