@@ -25,3 +25,17 @@ export const deleteBlogPost = asyncHandler(async (req, res, next) => {
   await BlogPostModel.findByIdAndDelete(id);
   res.status(204).end();
 });
+
+export const patchBlogPost = asyncHandler(async (req, res, next) => {
+  const { title, description, markdown, cover, date, category } = req.body;
+  const { id } = req.params;
+  const updated = await BlogPostModel.findByIdAndUpdate(
+    id,
+    { title, description, markdown, cover, date, category },
+    {
+      runValidators: true,
+      new: true,
+    },
+  );
+  res.status(200).json(updated);
+});
