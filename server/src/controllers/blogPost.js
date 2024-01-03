@@ -19,3 +19,9 @@ export const postBlogPost = asyncHandler(async (req, res, next) => {
   const saved = await newPost.save();
   res.status(201).json(saved);
 });
+
+export const deleteBlogPost = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  await BlogPostModel.findByIdAndDelete(id);
+  res.status(204).end();
+});
