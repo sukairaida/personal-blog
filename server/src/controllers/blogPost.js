@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import BlogPostModel from "../models/BlogPost.js";
+import { createStatusError } from "../utils/error.js";
 
 export const getBlogPosts = asyncHandler(async (req, res, next) => {
   const posts = await BlogPostModel.find({});
@@ -38,4 +39,13 @@ export const patchBlogPost = asyncHandler(async (req, res, next) => {
     },
   );
   res.status(200).json(updated);
+});
+
+export const getSinglePost = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  const post = await BlogPostModel.findById(id);
+  if (!post) {
+    throw createStatusError(`Post with id ${id} not found`, 404);
+  }
+  res.status(200).json(post);
 });
