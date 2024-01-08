@@ -28,12 +28,11 @@ import Navigation from "./Navigation.astro";
     font-weight: normal;
     background: linear-gradient(
       135deg,
-      rgba(250, 85, 225, 1) 25%,
-      rgba(250, 220, 0, 1) 50%,
-      rgba(0, 255, 250, 1) 75%
+      rgba(0, 150, 225, 1) 25%,
+      rgba(0, 255, 250, 1) 50%
     );
     background-size: 400% 400%;
-    animation: gradient 10s ease-in-out infinite;
+    animation: gradient 5s ease-in-out infinite alternate;
     filter: drop-shadow(0px 0px 4px #fff6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,9 +48,6 @@ import Navigation from "./Navigation.astro";
     }
     50% {
       background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
     }
   }
 
